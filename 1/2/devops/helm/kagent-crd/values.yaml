@@ -1,0 +1,47 @@
+controller:
+  enabled: true
+
+ui:
+  enabled: true
+
+agents:
+  argo-rollouts-agent:
+    enabled: false
+  cilium-debug-agent:
+    enabled: false
+  cilium-manager-agent:
+    enabled: false
+  cilium-policy-agent:
+    enabled: false
+  helm-agent:
+    enabled: true
+  istio-agent:
+    enabled: false
+  k8s-agent:
+    enabled: true
+  kgateway-agent:
+    enabled: false
+  observability-agent:
+    enabled: false
+  promql-agent:
+    enabled: false
+tools:
+  grafana-mcp:
+    enabled: false
+  querydoc:
+    enabled: false
+
+kmcp:
+  enabled: false
+
+providers:
+  openai:
+    enabled: false
+  azure:
+    enabled: false
+  gemini:
+    enabled: true
+  anthropic:
+    enabled: false
+  ollama:
+    enabled: false
