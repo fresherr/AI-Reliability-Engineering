@@ -1,10 +1,12 @@
 providers:
-  default: gemini
-  gemini:
-    provider: Gemini
+  default: openAI
+  openAI:
+    provider: OpenAI
     model: gemini-2.5-flash
-    apiKeySecretRef: kagent-gemini
-    apiKeySecretKey: GOOGLE_API_KEY
+    apiKeySecretRef: kagent-agentgateway
+    apiKeySecretKey: OPENAI_API_KEY
+    openAI:
+      baseUrl: http://agentgateway-proxy.agentgateway-system.svc.cluster.local/v1beta/openai
 
 agents:
   argo-rollouts-agent:
