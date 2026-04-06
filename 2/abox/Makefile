@@ -11,6 +11,28 @@ help:
 run:
 	@bash scripts/setup.sh
 
+# Load local env if present
+-include .env
+export GEMINI_API_KEY
+export OPENAI_API_KEY
+
+.PHONY: create-kagent-agentgateway-secret create-agentgateway-gemini-secret create-secrets
+
+create-kagent-agentgateway-secret:
+	-@kubectl delete secret kagent-agentgateway -n kagent --ignore-not-found
+	@kubectl create secret generic kagent-agentgateway \
+		--from-literal=OPENAI_API_KEY=$(if $(OPENAI_API_KEY),$(OPENAI_API_KEY),agentgateway-local) \
+		-n kagent
+
+create-agentgateway-gemini-secret:
+	-@kubectl delete secret agentgateway-gemini -n agentgateway-system --ignore-not-found
+	@kubectl create secret generic agentgateway-gemini \
+		--from-literal=Authorization=$(GEMINI_API_KEY) \
+		-n agentgateway-system
+
+create-secrets: create-kagent-agentgateway-secret create-agentgateway-gemini-secret
+
+
 tools:
 ifeq ($(OS),Windows_NT)
 	@echo "Detected Windows: using PowerShell helper script to manage installers"

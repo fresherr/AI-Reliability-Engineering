@@ -4,3 +4,7 @@ kind: Kustomization
 resources:
   - agentgateway.yaml
   - kagent.yaml
+  - agentregistry.yaml
+  - kagent-default-model-config.yaml
+  - discovery.yaml
+  # Secrets are created from local .env with `make create-secrets` and are intentionally NOT committed here

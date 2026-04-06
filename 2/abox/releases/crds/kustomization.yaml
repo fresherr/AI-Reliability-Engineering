@@ -5,3 +5,9 @@ resources:
   - gateway-api-crds.yaml
   - agentgateway-crds.yaml
   - kagent-crds.yaml
+  - agentcatalogs.agentregistry.dev.yaml
+  - discoveryconfigs.agentregistry.dev.yaml
+  - mcpservercatalogs.agentregistry.dev.yaml
+  - modelcatalogs.agentregistry.dev.yaml
+  - registrydeployments.agentregistry.dev.yaml
+  - skillcatalogs.agentregistry.dev.yaml

@@ -10,7 +10,7 @@ Development:
 
 Infrastructure:
 
-3. Розгорнути Inventory на abox (або власному робочому середовищі) та отримати перелік AI ресурсів в кластері
+3. Розгорнути [Inventory](https://github.com/den-vasyliev/agentregistry-inventory) на abox (або власному робочому середовищі) та отримати перелік AI ресурсів в кластері
 
  
 
